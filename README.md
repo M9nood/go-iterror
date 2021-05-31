@@ -18,24 +18,24 @@ import (
 )
 
 func main() {
-	err := iterror.NewError(iterror.BadRequestException, "Invalid Request")
-	fmt.Println("error code :", err.GetCode())
+  err := iterror.NewError(iterror.BadRequestException, "Invalid Request")
+  fmt.Println("error code :", err.GetCode())
   // error code : 400
-	fmt.Println("error http :", err.GetHttpCode())
+  fmt.Println("error http :", err.GetHttpCode())
   // error http : 400
-	fmt.Println("error name :", err.GetName())
+  fmt.Println("error name :", err.GetName())
   // error name : BadRequestException
-	fmt.Println("error message :", err.Error())
+  fmt.Println("error message :", err.Error())
   // error message : Invalid Request
 
-	errCustom := iterror.NewErrorCustomHttpCode(iterror.BadRequestException, 200, "Invalid Request")
-	fmt.Println("error custom code :", errCustom.GetCode())
+  errCustom := iterror.NewErrorCustomHttpCode(iterror.BadRequestException, 200, "Invalid Request")
+  fmt.Println("error custom code :", errCustom.GetCode())
   // error custom code : 400
-	fmt.Println("error custom http :", errCustom.GetHttpCode())
+  fmt.Println("error custom http :", errCustom.GetHttpCode())
   // error custom http : 200
-	fmt.Println("error custom name :", errCustom.GetName())
+  fmt.Println("error custom name :", errCustom.GetName())
   // error custom name : BadRequestException
-	fmt.Println("error custom message :", errCustom.Error())
+  fmt.Println("error custom message :", errCustom.Error())
   // error custom message : Invalid Request
 }
 ```
