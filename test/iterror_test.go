@@ -1,8 +1,9 @@
 package test
 
 import (
-	"iterror"
 	"testing"
+
+	iterror "github.com/M9nood/go-iterror"
 
 	"github.com/stretchr/testify/assert"
 )
