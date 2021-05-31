@@ -1,4 +1,4 @@
-module iterror
+module github.com/M9nood/go-iterror
 
 go 1.16
 
