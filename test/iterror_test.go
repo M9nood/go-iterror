@@ -70,3 +70,27 @@ func TestErrors(t *testing.T) {
 		}
 	}
 }
+
+func TestErrorCustomHTTP(t *testing.T) {
+	err := iterror.NewErrorCustomHttpCode(iterror.NotFoundException, 200, "User not found")
+	assert.NotEmpty(t, err.GetCode())
+	assert.Equal(t, "404", err.GetCode())
+	assert.Equal(t, 200, err.GetHttpCode())
+	assert.Equal(t, "NotFoundException", err.GetName())
+}
+
+func TestBadRequestException(t *testing.T) {
+	err := iterror.ErrorBadRequest("Invalid request")
+	assert.NotEmpty(t, err.GetCode())
+	assert.Equal(t, "400", err.GetCode())
+	assert.Equal(t, 400, err.GetHttpCode())
+	assert.Equal(t, "BadRequestException", err.GetName())
+}
+
+func TestNotFoundException(t *testing.T) {
+	err := iterror.ErrorNotFound("Invalid request")
+	assert.NotEmpty(t, err.GetCode())
+	assert.Equal(t, "404", err.GetCode())
+	assert.Equal(t, 404, err.GetHttpCode())
+	assert.Equal(t, "NotFoundException", err.GetName())
+}
