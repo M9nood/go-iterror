@@ -42,6 +42,7 @@ func main() {
 
 ### Variables
 
+```  
 "400" - BadRequestException  
 "401" - UnauthorizedException  
 "403" - ForbiddenException  
@@ -50,6 +51,49 @@ func main() {
 "409" - ConflictException  
 "429" - ManyRequestException  
 "500" - InternalServerErrorException  
+```
+
+### Functions
+#### func NewError
+```
+func NewError(errCode string, msg string) *ErrorInfo
+```
+#### func NewErrorCustomHttpCode
+```
+func NewErrorCustomHttpCode(errCode string, httpCode int, msg string) *ErrorInfo
+```
+#### func ErrorBadRequest
+```
+func ErrorBadRequest(msg string) *ErrorInfo
+```
+#### func ErrorUnauthorized
+```
+func ErrorUnauthorized(msg string) *ErrorInfo
+```
+#### func ErrorForbidden
+```
+func ErrorForbidden(msg string) *ErrorInfo
+```
+#### func ErrorNotFound
+```
+func ErrorNotFound(msg string) *ErrorInfo
+```
+#### func ErrorRequestTimeout
+```
+func ErrorRequestTimeout(msg string) *ErrorInfo
+```
+#### func ErrorConflict
+```
+func ErrorConflict(msg string) *ErrorInfo
+```
+#### func ErrorManyRequest
+```
+func ErrorManyRequest(msg string) *ErrorInfo
+```
+#### func ErrorInternalServer
+```
+func ErrorInternalServer(msg string) *ErrorInfo
+```
 
 ### Use case
 In a project structure example as 
